@@ -1,4 +1,4 @@
-from make_morse import LETTER_TO_MORSE_DICT, MORSE_TO_LETTER_DICT, VALID_LETTER_LIST, VALID_MORSE_LIST
+from make_morse import LETTER_TO_MORSE_DICT, MORSE_TO_LETTER_DICT
 
 
 # user choice for encode or decode
@@ -21,31 +21,31 @@ while is_on:
 
     if user_input_choice == 'e':
         for ch in user_input_text:
-            if ch in VALID_LETTER_LIST:
+            if ch in LETTER_TO_MORSE_DICT.keys():
                 is_on = False  # after for loop ends, while loop ends, because there are no spelling mistakes
                 continue
             else:
                 is_on = True
-                print('Invalid characters. Only A-Z and 0-9. Try again.')
+                print('Invalid characters. Only A-Z, 0-9 and whitespaces. Try again.')
                 break
     else:
-        for ch in user_input_text:
-            if ch in VALID_MORSE_LIST:
+        for code in user_input_text:
+            if code in MORSE_TO_LETTER_DICT.keys():
                 is_on = False  # after for loop ends, while loop ends, because there are no spelling mistakes
                 continue
             else:
                 is_on = True
-                print('Invalid characters. Check code spelling. Try again.')
+                print('Invalid characters. Check your code formatting. Try again.')
                 break
 
 # makes translated message
 translated_message = ''
 if user_input_choice == 'e':
     for ch in user_input_text:
-        translated_message += (LETTER_TO_MORSE_DICT[ch] + ' ')
+        translated_message += LETTER_TO_MORSE_DICT[ch] + ' '
     print(f'Encoded message: {translated_message}')
 
 else:
-    for ch in user_input_text:
-        translated_message += MORSE_TO_LETTER_DICT[ch]
+    for code in user_input_text:
+        translated_message += MORSE_TO_LETTER_DICT[code]
     print(f'Decoded message: {translated_message}')
