@@ -18,8 +18,8 @@ while is_again:
         if user_input_choice == 'e':
             user_input_text = input('Enter text to encode: ').upper()
         else:
-            user_input_text = input('Enter text to decode(use "?" to make whitespace): ').upper()
-            user_input_text = user_input_text.split()
+            user_input_code = input('Enter text to decode(use "?" to make whitespace): ').upper()
+            user_input_code = user_input_code.split()
 
         if user_input_choice == 'e':
             for ch in user_input_text:
@@ -31,7 +31,7 @@ while is_again:
                     print('Invalid characters. Only A-Z, 0-9 and whitespaces. Try again.')
                     break
         else:
-            for code in user_input_text:
+            for code in user_input_code:
                 if code in MORSE_TO_LETTER_DICT.keys():
                     is_on = False  # while loop ends if no formatting mistakes in for loop
                     continue
@@ -48,7 +48,7 @@ while is_again:
         print(f'Encoded message: {translated_message}')
 
     else:
-        for code in user_input_text:
+        for code in user_input_code:
             translated_message += MORSE_TO_LETTER_DICT[code]
         print(f'Decoded message: {translated_message}')
 
