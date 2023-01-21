@@ -52,6 +52,7 @@ while is_again:
             translated_message += MORSE_TO_LETTER_DICT[code]
         print(f'Decoded message: {translated_message}')
 
+    # execute app again
     while True:
         user_input_again = input('\nExecute again? (y/n): ')
         if user_input_again.lower() == 'y':
