@@ -63,5 +63,3 @@ while is_again:
             break
         else:
             print('Wrong input. Try again.')
-
-
