@@ -5,7 +5,7 @@ is_again = True
 while is_again:
     # user choice for encode or decode
     while True:
-        user_input_choice = input('Type "e" to encode, or "d" for decode: ').lower()
+        user_input_choice = input('\nType "e" to encode, or "d" for decode: ').lower()
         if user_input_choice != 'e' and user_input_choice != 'd':
             print('Wrong input. Try again.')
             continue
