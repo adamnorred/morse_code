@@ -4,7 +4,7 @@ Create dictionaries from morse_lib.txt, and create valid characters lists to che
 user input.
 """
 
-with open('../../../../Downloads/morse_code-master (1)/morse_code-master/morse_lib.txt') as file:
+with open('morse_lib.txt') as file:
     morse_data_list = file.readlines()
 
 morse_data_list_format = []
@@ -26,29 +26,12 @@ for item in morse_data_list:
 LETTER_TO_MORSE_DICT = {}
 for code in morse_data_list_format:
     LETTER_TO_MORSE_DICT[code[:1]] = code[1:]
-LETTER_TO_MORSE_DICT[' '] = ' '
+LETTER_TO_MORSE_DICT[' '] = '?'  # needed for formatting morse into readable message
 
 # create dictionary morse to letter with characters corresponding to values with list slices
 MORSE_TO_LETTER_DICT = {}
 for code in morse_data_list_format:
     MORSE_TO_LETTER_DICT[code[1:]] = code[:1]
+# needed for formatting morse into readable message
 MORSE_TO_LETTER_DICT[' '] = ' '
 MORSE_TO_LETTER_DICT['?'] = ' '
-
-# # create list of valid letters for user input
-# VALID_LETTER_LIST = []
-# for code in morse_data_list_format:
-#     char = code[:1]
-#     VALID_LETTER_LIST.append(char)
-# VALID_LETTER_LIST.append('')
-#
-# # create list of valid morse for user input
-# VALID_MORSE_LIST = []
-# for code in morse_data_list_format:
-#     char = code[1:]
-#     VALID_MORSE_LIST.append(char)
-# VALID_MORSE_LIST.append('')
-# VALID_MORSE_LIST.append('?')
-
-
-
